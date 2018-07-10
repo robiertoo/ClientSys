@@ -11,10 +11,10 @@
 </head>
 
 <body>
-    <?php
-        include_once("include/navbar.php");
-        include_once("include/modalLogin.php");
-    ?>
+<?php
+include_once "include/navbar.php";
+include_once "include/modalLogin.php";
+?>
 
     <div id="register">
         <div class="container">
@@ -48,7 +48,7 @@
 
             window.setTimeout(function() {
                 $(".alert").fadeTo(500, 0).slideUp(500, function(){
-                    $(this).remove(); 
+                    $(this).remove();
                 });
             }, 1500);
         </script>

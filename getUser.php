@@ -1,12 +1,10 @@
-<?php 
-	include_once("connection.php");
-	
-	$connection = new CONNECTION();
+<?php
+include_once "connection.php";
 
-	$email = $_POST['email'];
-	$name = $_POST['name'];
-	$password = $_POST['password'];
+$connection = new CONNECTION();
 
-	$connection->RegisterUser($email, $name, $password);
+$email = $_POST['email'];
+$name = $_POST['name'];
+$password = $_POST['password'];
 
-?>
+$connection->RegisterUser($email, $name, $password);

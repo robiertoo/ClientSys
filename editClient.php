@@ -11,18 +11,18 @@
 </head>
 
 <body>
-    <?php
-        include_once("include/navbar.php");
-        include_once("include/modalLogin.php");
-        include_once("connection.php");
+<?php
+include_once "include/navbar.php";
+include_once "include/modalLogin.php";
+include_once "connection.php";
 
-        $id = $_GET["id"];
+$id = $_GET["id"];
 
-        $connection = new CONNECTION();
-        $lines = $connection->GetClientInfo($id);
-        foreach($lines as $line){
-        }
-    ?>
+$connection = new CONNECTION();
+$lines = $connection->GetClientInfo($id);
+foreach ($lines as $line) {
+}
+?>
 
     <div id="register">
         <div class="container">
@@ -64,7 +64,7 @@
 
         window.setTimeout(function() {
             $(".alert").fadeTo(500, 0).slideUp(500, function(){
-                $(this).remove(); 
+                $(this).remove();
             });
         }, 1500);
     </script>

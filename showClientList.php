@@ -11,13 +11,13 @@
 </head>
 
 <body>
-  <?php
-include_once("include/navbar.php");
-include_once("include/modalLogin.php");
-include_once("connection.php");
+<?php
+include_once "include/navbar.php";
+include_once "include/modalLogin.php";
+include_once "connection.php";
 
-if(!$logged){
-  header("location:index.php");
+if (!$logged) {
+    header("location:index.php");
 }
 ?>
 
@@ -40,11 +40,11 @@ if(!$logged){
           </tr>
         </thead>
         <tbody>
-      <?php
-        $connection = new CONNECTION();
-        $lines = $connection->GetClientList();
-        foreach($lines as $line){
-      ?>
+<?php
+$connection = new CONNECTION();
+$lines = $connection->GetClientList();
+foreach ($lines as $line) {
+    ?>
       <tr>
       <th scope="row"><?php echo $line["id"]; ?></th>
       <td><?php echo $line["name"]; ?></td>
@@ -56,9 +56,9 @@ if(!$logged){
         <a class="btn btn-sm btn-secondary" href="editClient.php?id=<?php echo $line["id"] ?>">Editar</a>
         <a class="btn btn-sm btn-danger" href="client.php?id=<?php echo $line["id"] ?>&action=erase">Apagar</a></td>
       </tr>
-      <?php
-        }
-      ?>
+    <?php
+}
+?>
         </tbody>
       </table>
 
@@ -70,12 +70,12 @@ if(!$logged){
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
     crossorigin="anonymous"></script>
 
-  <?php
-    if($_GET){
-      $msg = $_GET["msg"];
-      include_once("include/msg.php");
-    }
-  ?>
+<?php
+if ($_GET) {
+    $msg = $_GET["msg"];
+    include_once "include/msg.php";
+}
+?>
   <script>
     $("#login-button").click(function(){
         $("#login-box").modal();
@@ -83,7 +83,7 @@ if(!$logged){
 
     window.setTimeout(function() {
         $(".alert").fadeTo(500, 0).slideUp(500, function(){
-            $(this).remove(); 
+            $(this).remove();
         });
     }, 1500);
   </script>

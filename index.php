@@ -11,14 +11,14 @@
 </head>
 
 <body>
-  <?php
-    include_once("include/navbar.php");  
-    include_once("include/modalLogin.php");
-    include_once("connection.php");
+<?php
+include_once "include/navbar.php";
+include_once "include/modalLogin.php";
+include_once "connection.php";
 
-    $connection = new CONNECTION();
-    $connection->Connect();
-  ?>
+$connection = new CONNECTION();
+$connection->Connect();
+?>
 
   <div id="content">
     <div class="container">
@@ -40,11 +40,11 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
     crossorigin="anonymous"></script>
   <?php
-    if($_GET){
-      $msg = $_GET["msg"];
-      include_once("include/msg.php");
-    }
-  ?>
+if ($_GET) {
+    $msg = $_GET["msg"];
+    include_once "include/msg.php";
+}
+?>
 
   <script>
     $("#login-button").click(function(){
@@ -53,7 +53,7 @@
 
     window.setTimeout(function() {
         $(".alert").fadeTo(500, 0).slideUp(500, function(){
-            $(this).remove(); 
+            $(this).remove();
         });
     }, 1500);
   </script>

@@ -1,12 +1,11 @@
 <?php
 session_start();
-if((!isset ($_SESSION['email']) == true) and (!isset ($_SESSION['password']) == true))
-{
-  unset($_SESSION['email']);
-  unset($_SESSION['password']); 
-  $logged = false;
+if ((!isset($_SESSION['email']) == true) and (!isset($_SESSION['password']) == true)) {
+    unset($_SESSION['email']);
+    unset($_SESSION['password']);
+    $logged = false;
 } else {
-  $logged = $_SESSION['email'];
+    $logged = $_SESSION['email'];
 }
 ?>
 
@@ -18,9 +17,9 @@ if((!isset ($_SESSION['email']) == true) and (!isset ($_SESSION['password']) == 
     </button>
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-    <?php
-      if(!$logged){
-    ?>
+<?php
+if (!$logged) {
+?>
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="nav-link" href="index.php">Home</a>
@@ -31,9 +30,9 @@ if((!isset ($_SESSION['email']) == true) and (!isset ($_SESSION['password']) == 
           <a class="nav-link" id="login-button" data-toggle="modal" data-target="#login-box">Login</a>
         </li>
       </ul>
-    <?php
-      } else {
-    ?>
+<?php
+} else {
+?>
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="nav-link" href="index.php">Home</a>
@@ -47,8 +46,8 @@ if((!isset ($_SESSION['email']) == true) and (!isset ($_SESSION['password']) == 
           <a class="nav-link" href="getLog.php?action=logout" ><?php echo $logged ?> - Sair</a>
         </li>
       </ul>
-    <?php
-      }
-    ?>
+<?php
+}
+?>
     </div>
 </nav>
