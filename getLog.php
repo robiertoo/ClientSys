@@ -17,12 +17,12 @@ switch ($action) {
             $data = $connect->query("SELECT * FROM users WHERE email = '$email' AND password = '$password'");
             $obj = $data->fetchObject();
             if ($obj) {
-                $_SESSION['email'] = $email;
-                $_SESSION['password'] = $password;
+                $_SESSION["email"] = $email;
+                $_SESSION["password"] = $password;
                 header("location:index.php?msg=UserSuccess");
             } else {
-                unset($_SESSION['email']);
-                unset($_SESSION['password']);
+                unset($_SESSION["email"]);
+                unset($_SESSION["password"]);
                 header("location:index.php?msg=UserLoginError");
             }
         } catch (PDOException $e) {

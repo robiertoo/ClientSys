@@ -30,13 +30,13 @@ class CONNECTION
                 $data = $connect->query("SELECT * FROM users WHERE email = '$email' AND password = '$userPassword'");
                 $obj = $data->fetchObject();
                 if ($obj) {
-                    $_SESSION['email'] = $email;
-                    $_SESSION['password'] = $userPassword;
-                    header('location:index.php?msg=UserSuccess');
+                    $_SESSION["email"] = $email;
+                    $_SESSION["password"] = $userPassword;
+                    header("location:index.php?msg=UserSuccess");
                 } else {
-                    unset($_SESSION['email']);
-                    unset($_SESSION['password']);
-                    header('location:index.php?msg=UserError');
+                    unset($_SESSION["email"]);
+                    unset($_SESSION["password"]);
+                    header("location:index.php?msg=UserError");
                 }
             }
         } catch (PDOException $e) {
@@ -53,7 +53,7 @@ class CONNECTION
             foreach ($lines as $line) {
             }
             if ($email == $line["email"]) {
-                header('location:index.php?msg=ClientError');
+                header("location:index.php?msg=ClientError");
             } else {
                 $connect->exec("INSERT INTO clients (email, name, phone, city, state) VALUES ('$email', '$name', '$phone', '$city', '$state')");
                 header("location:showClientList.php?msg=ClientSuccess");

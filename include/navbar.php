@@ -1,11 +1,11 @@
 <?php
 session_start();
-if ((!isset($_SESSION['email']) == true) and (!isset($_SESSION['password']) == true)) {
-    unset($_SESSION['email']);
-    unset($_SESSION['password']);
+if ((!isset($_SESSION["email"]) == true) and (!isset($_SESSION["password"]) == true)) {
+    unset($_SESSION["email"]);
+    unset($_SESSION["password"]);
     $logged = false;
 } else {
-    $logged = $_SESSION['email'];
+    $logged = $_SESSION["email"];
 }
 ?>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
