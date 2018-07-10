@@ -24,24 +24,30 @@ if (!$logged) {
             <form method="post" action="client.php?action=register">
                 <div class="form-group">
                     <label for="name">Nome</label>
-                    <input type="text" class="form-control" name="name" id="name" aria-describedby="nameHelp" placeholder="Insira seu nome">
+                    <input type="text" class="form-control" name="name" id="name" aria-describedby="nameHelp" placeholder="Insira o nome" required>
                 </div>
                 <div class="form-group">
                     <label for="email">E-mail</label>
-                    <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Insira seu e-mail">
+                    <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Insira o e-mail" required>
                 </div>
                 <div class="form-group">
                     <label for="phone">Telefone</label>
-                    <input type="phone" class="form-control" name="phone" id="phone" aria-describedby="phoneHelp" placeholder="Insira seu telefone">
+                    <input type="phone" class="form-control" name="phone" id="phone" aria-describedby="phoneHelp" placeholder="Insira o telefone" required>
                 </div>
-                <div class="form-group">
-                    <label for="city">Cidade</label>
-                    <input type="text" class="form-control" name="city" id="city" aria-describedby="cityHelp" placeholder="Insira seu cidade">
-                </div>
-                <div class="form-group">
+                <div class="form-row">
+                    <div class="col">
                     <label for="state">Estado</label>
-                    <input type="state" class="form-control" name="state" id="state" aria-describedby="stateHelp" placeholder="Insira seu estado">
+                        <select type="state" class="form-control" name="state" id="state" aria-describedby="stateHelp" required>
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label for="city">Cidade</label>
+                        <select id="city" name="city" class="form-control" required>
+		                </select>
+                    </div>
                 </div>
+                <br>
                 <button type="Cadastrar" class="btn btn-primary float-right">Cadastrar</button>
             </form>
         </div>
@@ -72,6 +78,29 @@ if (!$logged) {
             } else {
                 element.mask("(99) 9999-9999?9");
             }
+        });
+        $.getJSON('estados_cidades.json', function (data) {
+            var items = [];
+            var options = '<option value="">Insira o estado: </option>';
+            $.each(data, function (key, val) {
+                options += '<option value="' + val.nome + '">' + val.nome + '</option>';
+            });
+            $("#state").html(options);
+            $("#state").change(function () {
+                var options_cidades = '';
+                var str = "";
+                $("#state option:selected").each(function () {
+                    str += $(this).text();
+                });
+                $.each(data, function (key, val) {
+                    if(val.nome == str) {
+                        $.each(val.cidades, function (key_city, val_city) {
+                            options_cidades += '<option value="' + val_city + '">' + val_city + '</option>';
+                        });
+                    }
+                });
+                $("#city").html(options_cidades);
+            }).change();
         });
     </script>
 </body>

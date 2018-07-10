@@ -27,24 +27,31 @@ foreach ($lines as $line) {
             <form method="post" action="client.php?id='<?php echo $id ?>'&action=update">
                 <div class="form-group">
                     <label for="name">Nome</label>
-                    <input type="text" class="form-control" name="name" id="name" aria-describedby="nameHelp" value="<?php echo $line["name"] ?>">
+                    <input type="text" class="form-control" name="name" id="name" aria-describedby="nameHelp" value="<?php echo $line["name"] ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="email">E-mail</label>
-                    <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" value="<?php echo $line["email"] ?>">
+                    <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" value="<?php echo $line["email"] ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="phone">Telefone</label>
-                    <input type="phone" class="form-control" name="phone" id="phone" aria-describedby="phoneHelp" value="<?php echo $line["phone"] ?>">
+                    <input type="phone" class="form-control" name="phone" id="phone" aria-describedby="phoneHelp" value="<?php echo $line["phone"] ?>" required>
                 </div>
-                <div class="form-group">
-                    <label for="city">Cidade</label>
-                    <input type="text" class="form-control" name="city" id="city" aria-describedby="cityHelp" value="<?php echo $line["city"] ?>">
-                </div>
-                <div class="form-group">
+                <div class="form-row">
+                    <div class="col">
                     <label for="state">Estado</label>
-                    <input type="state" class="form-control" name="state" id="state" aria-describedby="stateHelp" value="<?php echo $line["state"] ?>">
+                        <select type="state" class="form-control" name="state" id="state" aria-describedby="stateHelp" required>
+                            <option value="<?php echo $line["state"] ?>"></option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label for="city">Cidade</label>
+                        <select id="city" name="city" class="form-control" required>
+                            <option value="<?php echo $line["city"] ?>"></option>
+		                </select>
+                    </div>
                 </div>
+                <br>
                 <button type="Editar" class="btn btn-primary float-right">Editar</button>
             </form>
         </div>
@@ -52,6 +59,8 @@ foreach ($lines as $line) {
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+
     <script>
         $("#login-button").click(function () {
             $("#login-box").modal();
@@ -74,6 +83,29 @@ foreach ($lines as $line) {
             } else {
                 element.mask("(99) 9999-9999?9");
             }
+        });
+        $.getJSON('estados_cidades.json', function (data) {
+            var items = [];
+            var options = '<option value="">Insira o estado: </option>';
+            $.each(data, function (key, val) {
+                options += '<option value="' + val.nome + '">' + val.nome + '</option>';
+            });
+            $("#state").html(options);
+            $("#state").change(function () {
+                var options_cidades = '';
+                var str = "";
+                $("#state option:selected").each(function () {
+                    str += $(this).text();
+                });
+                $.each(data, function (key, val) {
+                    if(val.nome == str) {
+                        $.each(val.cidades, function (key_city, val_city) {
+                            options_cidades += '<option value="' + val_city + '">' + val_city + '</option>';
+                        });
+                    }
+                });
+                $("#city").html(options_cidades);
+            }).change();
         });
     </script>
 </body>
