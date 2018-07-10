@@ -5,7 +5,6 @@ class CONNECTION
     public $password = "";
     public $host = "127.0.0.1";
     public $dbname = "clientsys";
-
     public function Connect()
     {
         $connect = new PDO("mysql:host=$this->host;port=3306;dbname=$this->dbname", $this->user, $this->password);
@@ -13,12 +12,9 @@ class CONNECTION
         $connect->exec("set names utf8");
         return $connect;
     }
-
     public function RegisterUser($email, $name, $userPassword)
     {
-
         $connection = new CONNECTION();
-
         try {
             $connect = $connection->Connect();
             $connect->exec("set names utf8");
@@ -47,11 +43,9 @@ class CONNECTION
             echo "Deu erro... " . $e->getMessage();
         }
     }
-
     public function RegisterClient($email, $name, $phone, $city, $state)
     {
         $connection = new CONNECTION();
-
         try {
             $connect = $connection->Connect();
             $connect->exec("set names utf8");
@@ -68,11 +62,9 @@ class CONNECTION
             echo "Deu erro... " . $e->getMessage();
         }
     }
-
     public function GetClientList()
     {
         $connection = new CONNECTION();
-
         try {
             $connect = $connection->Connect();
             $connect->exec("set names utf8");
@@ -82,7 +74,6 @@ class CONNECTION
             echo "Deu erro... " . $e->getMessage();
         }
     }
-
     public function GetClientInfo($id)
     {
         $connection = new CONNECTION();
@@ -95,11 +86,9 @@ class CONNECTION
             echo "Deu erro..." . $e->getMessage();
         }
     }
-
     public function UpdateClient($id, $email, $name, $phone, $city, $state)
     {
         $connection = new CONNECTION();
-
         try {
             $connect = $connection->Connect();
             $connect->exec("set names utf8");
@@ -109,11 +98,9 @@ class CONNECTION
             echo "Deu erro... " . $e->getMessage();
         }
     }
-
     public function EraseClient($id)
     {
         $connection = new CONNECTION();
-
         try {
             $connect = $connection->Connect();
             $connect->exec("set names utf8");

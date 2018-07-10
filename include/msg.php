@@ -1,7 +1,7 @@
 <?php if ($msg == "UserSuccess") {?>
   <div class="alert alert-success alert-dismissible" role="alert">
-      <h5>Sucesso!</h5>
-      <p>Login realizado com sucesso!</p>
+    <h5>Sucesso!</h5>
+    <p>Login realizado com sucesso!</p>
   </div>
 <?php } elseif ($msg == "UserError") {?>
   <div class="alert alert-danger alert-dismissible" role="alert">
