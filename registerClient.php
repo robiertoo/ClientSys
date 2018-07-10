@@ -22,7 +22,7 @@
     <div id="register">
         <div class="container">
         <h1>Insira os dados do cliente!</h1>
-            <form method="post" action="getClient.php">
+            <form method="post" action="client.php?action=register">
                 <div class="form-group">
                     <label for="name">Nome</label>
                     <input type="text" class="form-control" name="name" id="name" aria-describedby="nameHelp" placeholder="Insira seu nome">

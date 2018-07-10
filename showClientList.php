@@ -54,7 +54,7 @@ if(!$logged){
       <td><?php echo $line["state"]; ?></td>
       <td>
         <a class="btn btn-sm btn-secondary" href="editClient.php?id=<?php echo $line["id"] ?>">Editar</a>
-        <a class="btn btn-sm btn-danger" href="eraseClient.php?id=<?php echo $line["id"] ?>">Apagar</a></td>
+        <a class="btn btn-sm btn-danger" href="client.php?id=<?php echo $line["id"] ?>&action=erase">Apagar</a></td>
       </tr>
       <?php
         }

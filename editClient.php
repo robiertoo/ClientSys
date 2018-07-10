@@ -27,7 +27,7 @@
     <div id="register">
         <div class="container">
         <h1>Insira os dados do cliente!</h1>
-            <form method="post" action="getUpdatedClient.php?id='<?php echo $id ?>'">
+            <form method="post" action="client.php?id='<?php echo $id ?>'&action=update">
                 <div class="form-group">
                     <label for="name">Nome</label>
                     <input type="text" class="form-control" name="name" id="name" aria-describedby="nameHelp" value="<?php echo $line["name"] ?>">
