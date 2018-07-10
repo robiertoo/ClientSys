@@ -11,11 +11,11 @@ if ((!isset($_SESSION['email']) == true) and (!isset($_SESSION['password']) == t
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
   <a class="navbar-brand" href="index.php">ClientSys</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
-  aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="navbarsExampleDefault">
-  <?php
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <?php
 if (!$logged) {
     ?>
     <ul class="navbar-nav mr-auto">
@@ -41,11 +41,13 @@ if (!$logged) {
     </ul>
     <ul class="navbar-nav navbar-right">
       <li class="nav-item">
-        <a class="nav-link" href="getLog.php?action=logout" ><?php echo $logged ?> - Sair</a>
+        <a class="nav-link" href="getLog.php?action=logout">
+          <?php echo $logged ?> - Sair
+        </a>
       </li>
     </ul>
     <?php
 }
 ?>
-</div>
+  </div>
 </nav>
