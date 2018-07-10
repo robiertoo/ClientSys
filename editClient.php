@@ -27,28 +27,23 @@ foreach ($lines as $line) {
             <form method="post" action="client.php?id='<?php echo $id ?>'&action=update">
                 <div class="form-group">
                     <label for="name">Nome</label>
-                    <input type="text" class="form-control" name="name" id="name" aria-describedby="nameHelp" value="<?php echo $line[" name
-                        "] ?>">
+                    <input type="text" class="form-control" name="name" id="name" aria-describedby="nameHelp" value="<?php echo $line["name"] ?>">
                 </div>
                 <div class="form-group">
                     <label for="email">E-mail</label>
-                    <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" value="<?php echo $line[" email
-                        "] ?>">
+                    <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" value="<?php echo $line["email"] ?>">
                 </div>
                 <div class="form-group">
                     <label for="phone">Telefone</label>
-                    <input type="phone" class="form-control" name="phone" id="phone" aria-describedby="phoneHelp" value="<?php echo $line[" phone
-                        "] ?>">
+                    <input type="phone" class="form-control" name="phone" id="phone" aria-describedby="phoneHelp" value="<?php echo $line["phone"] ?>">
                 </div>
                 <div class="form-group">
                     <label for="city">Cidade</label>
-                    <input type="text" class="form-control" name="city" id="city" aria-describedby="cityHelp" value="<?php echo $line[" city
-                        "] ?>">
+                    <input type="text" class="form-control" name="city" id="city" aria-describedby="cityHelp" value="<?php echo $line["city"] ?>">
                 </div>
                 <div class="form-group">
                     <label for="state">Estado</label>
-                    <input type="state" class="form-control" name="state" id="state" aria-describedby="stateHelp" value="<?php echo $line[" state
-                        "] ?>">
+                    <input type="state" class="form-control" name="state" id="state" aria-describedby="stateHelp" value="<?php echo $line["state"] ?>">
                 </div>
                 <button type="Editar" class="btn btn-primary float-right">Editar</button>
             </form>
@@ -66,6 +61,20 @@ foreach ($lines as $line) {
                 $(this).remove();
             });
         }, 1500);
+        $("#phone")
+        .mask("(99) 9999-9999?9")
+        .focusout(function (event) {
+            var target, phone, element;
+            target = (event.currentTarget) ? event.currentTarget : event.srcElement;
+            phone = target.value.replace(/\D/g, '');
+            element = $(target);
+            element.unmask();
+            if(phone.length > 10) {
+                element.mask("(99) 99999-999?9");
+            } else {
+                element.mask("(99) 9999-9999?9");
+            }
+        });
     </script>
 </body>
 

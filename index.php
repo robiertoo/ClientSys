@@ -23,13 +23,28 @@ $connection->Connect();
       <h1>
         ClientSys
       </h1>
+      <?php
+if (!$logged) {
+    ?>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae fuga similique saepe autem expedita quasi? Aspernatur voluptates
-        harum exercitationem sed molestiae doloribus unde tenetur? Asperiores hic obcaecati fugit accusantium quas!
+        Sistema destinado ao cadastro de clientes.
+      </p>
+      <p>
+        Realize login para ter acesso!
       </p>
       <a href="registerUser.php">
         <button class="btn btn-success float-right">Cadastre-se!</button>
       </a>
+      <?php
+} else {
+    ?>
+      <p>
+        Acesse a guia "Clientes" para ter acesso à nossa lista de clientes ou clique
+        <a href="showClientList.php">aqui</a>.
+      </p>
+      <?php
+}
+?>
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
