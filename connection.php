@@ -3,10 +3,10 @@ class CONNECTION{
   var $user = "root";
   var $password = "";
   var $host = "127.0.0.1";
-  var $db = "clientsys";
+  var $dbname = "clientsys";
 
   function Connect(){
-    $connect = new PDO("mysql:host=$this->host;port=3306;dbname=$this->db", $this->user, $this->password);
+    $connect = new PDO("mysql:host=$this->host;port=3306;dbname=$this->dbname", $this->user, $this->password);
     $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $connect->exec("set names utf8");
     return $connect;
@@ -35,10 +35,9 @@ class CONNECTION{
           $_SESSION['password'] = $userPassword;
           header('location:index.php?msg=UserSuccess');
         }else{
-          echo 'nao entrei grazadeus';
           unset ($_SESSION['email']);
           unset ($_SESSION['password']);
-          header('location:login.php');
+          header('location:index.php?msg=UserError');
         }
       }  
     }catch(PDOException $e){

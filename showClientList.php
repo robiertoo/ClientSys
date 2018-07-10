@@ -76,8 +76,6 @@ if(!$logged){
       include_once("include/msg.php");
     }
   ?>
-
-  <script src="js/action.js"></script>
   <script>
     $("#login-button").click(function(){
         $("#login-box").modal();
@@ -87,7 +85,7 @@ if(!$logged){
         $(".alert").fadeTo(500, 0).slideUp(500, function(){
             $(this).remove(); 
         });
-    }, 2000);
+    }, 1500);
   </script>
 </body>
 

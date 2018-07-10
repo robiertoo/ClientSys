@@ -46,7 +46,6 @@
     }
   ?>
 
-  <script src="js/action.js"></script>
   <script>
     $("#login-button").click(function(){
         $("#login-box").modal();
@@ -56,7 +55,7 @@
         $(".alert").fadeTo(500, 0).slideUp(500, function(){
             $(this).remove(); 
         });
-    }, 2000);
+    }, 1500);
   </script>
 
 </body>
