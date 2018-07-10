@@ -44,7 +44,7 @@ if((!isset ($_SESSION['email']) == true) and (!isset ($_SESSION['password']) == 
       </ul>
       <ul class="navbar-nav navbar-right">
         <li class="nav-item">
-          <a class="nav-link" href="logout.php" ><?php echo $logged ?> - Sair</a>
+          <a class="nav-link" href="getLog.php?action=logout" ><?php echo $logged ?> - Sair</a>
         </li>
       </ul>
     <?php

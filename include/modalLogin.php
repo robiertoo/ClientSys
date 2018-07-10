@@ -8,7 +8,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <form method="post" action="getLogin.php">
+          <form method="post" action="getLog.php?action=login">
             <div class="form-group">
               <label for="email">E-mail</label>
               <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Insira seu e-mail">
