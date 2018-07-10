@@ -1,0 +1,23 @@
+*{
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    margin-top: 80px;
+    margin-bottom: 60px;
+}
+
+/* #login-box .container {
+    border: 0.5px solid black;
+    border-radius: 8px;
+    padding: 20px;
+    background: white;
+} */
+
+#login-button{
+    cursor: pointer;
+}
+
+.nav-item a{
+    font-weight: 300;
+}
+
