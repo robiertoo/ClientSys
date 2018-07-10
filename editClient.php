@@ -9,16 +9,16 @@
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <?php
-    include_once "include/navbar.php";
-    include_once "include/modalLogin.php";
-    include_once "connection.php";
-    $id = $_GET["id"];
-    $connection = new CONNECTION();
-    $lines = $connection->GetClientInfo($id);
-    foreach ($lines as $line) {
-    }
-    ?>
+<?php
+include_once "include/navbar.php";
+include_once "include/modalLogin.php";
+include_once "connection.php";
+$id = $_GET["id"];
+$connection = new CONNECTION();
+$lines = $connection->GetClientInfo($id);
+foreach ($lines as $line) {
+}
+?>
     <div id="register">
         <div class="container">
             <h1>Insira os dados do cliente!</h1>

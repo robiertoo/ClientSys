@@ -9,13 +9,13 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <?php
-  include_once "include/navbar.php";
-  include_once "include/modalLogin.php";
-  include_once "connection.php";
-  $connection = new CONNECTION();
-  $connection->Connect();
-  ?>
+<?php
+include_once "include/navbar.php";
+include_once "include/modalLogin.php";
+include_once "connection.php";
+$connection = new CONNECTION();
+$connection->Connect();
+?>
   <div id="content">
     <div class="container">
       <h1>
@@ -33,12 +33,12 @@
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
   crossorigin="anonymous"></script>
-  <?php
-  if ($_GET) {
+<?php
+if ($_GET) {
     $msg = $_GET["msg"];
     include_once "include/msg.php";
-  }
-  ?>
+}
+?>
   <script>
     $("#login-button").click(function(){
       $("#login-box").modal();

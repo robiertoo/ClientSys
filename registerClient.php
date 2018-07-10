@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <?php
-    include_once "include/navbar.php";
-    include_once "include/modalLogin.php";
-    if (!$logged) {
-        header("location:index.php");
-    }
-    ?>
+<?php
+include_once "include/navbar.php";
+include_once "include/modalLogin.php";
+if (!$logged) {
+    header("location:index.php");
+}
+?>
     <div id="register">
         <div class="container">
             <h1>Insira os dados do cliente!</h1>
