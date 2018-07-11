@@ -1,23 +1,55 @@
-*{
+* {
     font-family: 'Roboto', sans-serif;
 }
+
 body {
     margin-top: 80px;
     margin-bottom: 60px;
 }
 
-/* #login-box .container {
-    border: 0.5px solid black;
-    border-radius: 8px;
-    padding: 20px;
-    background: white;
-} */
+.content{
+    min-height: 100vh;
+}
 
-#login-button{
+.footer{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+#login-button {
     cursor: pointer;
 }
 
-.nav-item a{
+.nav-item a {
     font-weight: 300;
 }
 
+#nameSearch {
+    border: none;
+    border-radius: 0;
+    border-bottom: #d3d3d3 solid 1px;
+    margin-bottom: 10px;
+}
+
+#nameSearch:focus {
+    border: none;
+    box-shadow: none;
+    background: #ececec;
+}
+
+.searchIcon {
+    fill: black;
+    height: 14px;
+    animation: 2s search infinite;
+}
+
+@keyframes search {
+    50% {
+        fill: rgb(100, 99, 99);
+        transform: scale(1.2);
+    }
+}

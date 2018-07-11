@@ -24,6 +24,18 @@ if (!$logged) {
       <h1>
         Clientes
       </h1>
+        <div class="col-md-5 float-right">
+          <label for="name">
+            <strong>Buscar nome</strong>
+            <svg version="1.1" class="searchIcon" xmlns="http://www.w3.org/2000/svg" viewBox="76.5 166.5 445.995 445.995">
+            <path d="M395.25,447h-20.145l-7.141-6.885C392.955,411.045,408,373.305,408,332.25c0-91.545-74.205-165.75-165.75-165.75
+              S76.5,240.705,76.5,332.25S150.705,498,242.25,498c41.055,0,78.795-15.045,107.865-40.035l6.885,7.141v20.145l127.5,127.245
+              l37.995-37.995L395.25,447z M242.25,447c-63.495,0-114.75-51.255-114.75-114.75S178.755,217.5,242.25,217.5S357,268.755,357,332.25
+              S305.745,447,242.25,447z"/>
+            </svg>
+          </label>
+          <input type="text" class="form-control" name="nameSearch" id="nameSearch" aria-describedby="nameSearchHelp" placeholder="Insira aqui">
+        </div>
       <table class="table">
         <thead>
           <tr>
@@ -76,6 +88,7 @@ foreach ($lines as $line) {
       </a>
     </div>
   </div>
+  <?php include_once "include/footer.php"?>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
     crossorigin="anonymous"></script>
@@ -94,6 +107,12 @@ if ($_GET) {
         $(this).remove();
       });
     }, 1500);
+    $("#nameSearch").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $(".table tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
   </script>
 </body>
 
