@@ -5,8 +5,8 @@ $action = $_GET["action"];
 switch ($action) {
     case "login":
         $connection = new CONNECTION();
-        $email = $_POST["email"];
-        $password = $_POST["password"];
+        $email = $_POST["emailLogin"];
+        $password = $_POST["passwordLogin"];
         try {
             $connect = $connection->Connect();
             $data = $connect->query("SELECT * FROM users");

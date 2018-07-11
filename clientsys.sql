@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 11-Jul-2018 às 03:07
+-- Generation Time: 11-Jul-2018 às 03:40
 -- Versão do servidor: 10.1.19-MariaDB
 -- PHP Version: 7.2.4
 
@@ -42,11 +42,12 @@ CREATE TABLE `clients` (
 --
 
 INSERT INTO `clients` (`id`, `email`, `name`, `city`, `state`, `phone`) VALUES
-(12, 'rob.nettom@gmail.com', 'Roberto Maciel', 'Cruzeiro', 'São Paulo', '(12) 99145-1238'),
-(14, 'antonio.carlos@hotmail.com', 'Antônio Carlos', 'Aragominas', 'Tocantins', '(12) 3133-3333'),
-(15, 'cass.mar@gmail.com', 'Cassiano Maralto', 'Bom Jardim', 'Maranhão', '(12) 3142-5435'),
-(16, 'mir.ant@bol.com', 'Mirabella Antonietta', 'Bom Jesus do Norte', 'Espírito Santo', '(42) 0398-0211'),
-(17, 'baixinhosapenas@globoourecord.com', 'Meneghel, Xuxa', 'Lauro Muller', 'Santa Catarina', '(10) 2943-8650');
+(1, 'rob.nettom@gmail.com', 'Roberto Maciel', 'Cruzeiro', 'São Paulo', '(12) 99145-1238'),
+(2, 'antonio.carlos@hotmail.com', 'Antônio Carlos', 'Aragominas', 'Tocantins', '(12) 3133-3333'),
+(3, 'cass.mar@gmail.com', 'Cassiano Maralto', 'Bom Jardim', 'Maranhão', '(12) 3142-5435'),
+(4, 'mir.ant@bol.com', 'Mirabella Antonietta', 'Bom Jesus do Norte', 'Espírito Santo', '(42) 0398-0211'),
+(5, 'baixinhosapenas@globoourecord.com', 'Meneghel, Xuxa', 'Lauro Muller', 'Santa Catarina', '(10) 2943-8650'),
+(6, 'teste.teste@teste.com', 'Teste Teste', 'Tocantínia', 'Tocantins', '(33) 3333-33333');
 
 -- --------------------------------------------------------
 
@@ -66,12 +67,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `name`, `password`) VALUES
-(10, 'rob.nettom@gmail.com', 'Roberto', 'roberto'),
-(11, 'furioso@gmail.com', 'Furioso', 'furioso'),
-(12, 'mary.db@gmail.com', 'Maryane ', 'MARYANE'),
-(13, 'asdasd.asd@asdasd', 'Antônio Mattos', 'antonio'),
-(14, 'roberto_netinho2@hotmail.com', 'netinho', 'a483cd110bf7a7961c85e829b1149069ceba1f335edb0c4362'),
-(15, 'asd.asd@asd', 'asd', '21865a68bb7f38aa7d1ed6b6fddcc177469463b5b2f3cbe69f');
+(1, 'teste.teste@teste.com', 'Teste Teste', 'teste123'),
+(2, 'admin@prodweb.com', 'Admin', 'admin123');
 
 --
 -- Indexes for dumped tables
@@ -97,13 +94,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

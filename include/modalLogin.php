@@ -10,12 +10,12 @@
       <div class="modal-body">
         <form method="post" action="getLog.php?action=login">
           <div class="form-group">
-            <label for="email">E-mail</label>
-            <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Insira seu e-mail">
+            <label for="emailLogin">E-mail</label>
+            <input type="emailLogin" name="emailLogin" class="form-control" id="emailLogin" aria-describedby="emailLoginHelp" placeholder="Insira seu e-mail">
           </div>
           <div class="form-group">
-            <label for="password">Senha</label>
-            <input type="password" name="password" class="form-control" id="password" placeholder="Insira sua senha">
+            <label for="passwordLogin">Senha</label>
+            <input type="password" name="passwordLogin" class="form-control" id="passwordLogin" placeholder="Insira sua senha">
           </div>
           <div class="modal-footer">
             <button type="Enviar" class="btn btn-primary float-left">Entrar</button>
