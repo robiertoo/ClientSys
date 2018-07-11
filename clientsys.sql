@@ -28,6 +28,10 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `clients`
 --
 
+CREATE DATABASE `clientsys`;
+
+USE `clientsys`;
+
 CREATE TABLE `clients` (
   `id` int(11) NOT NULL,
   `email` varchar(150) NOT NULL,

@@ -1,0 +1,15 @@
+ClientSys
+Sistema para controle de clientes (cadastro, busca pelo nome, edição e exclusão).
+
+Para acessar as funções, favor realizar login ou cadastrar-se.
+
+Caso queira testar um login já criado:
+E-mail: admin@prodweb.com
+Senha: 	admin123
+
+Arquivo para criação do bd: clientsys.sql
+
+Grato pela atenção!
+
+Roberto Maciel
+
