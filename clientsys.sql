@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 11-Jul-2018 às 03:40
+-- Generation Time: 11-Jul-2018 às 03:53
 -- Versão do servidor: 10.1.19-MariaDB
 -- PHP Version: 7.2.4
 
@@ -43,11 +43,9 @@ CREATE TABLE `clients` (
 
 INSERT INTO `clients` (`id`, `email`, `name`, `city`, `state`, `phone`) VALUES
 (1, 'rob.nettom@gmail.com', 'Roberto Maciel', 'Cruzeiro', 'São Paulo', '(12) 99145-1238'),
-(2, 'antonio.carlos@hotmail.com', 'Antônio Carlos', 'Aragominas', 'Tocantins', '(12) 3133-3333'),
 (3, 'cass.mar@gmail.com', 'Cassiano Maralto', 'Bom Jardim', 'Maranhão', '(12) 3142-5435'),
-(4, 'mir.ant@bol.com', 'Mirabella Antonietta', 'Bom Jesus do Norte', 'Espírito Santo', '(42) 0398-0211'),
-(5, 'baixinhosapenas@globoourecord.com', 'Meneghel, Xuxa', 'Lauro Muller', 'Santa Catarina', '(10) 2943-8650'),
-(6, 'teste.teste@teste.com', 'Teste Teste', 'Tocantínia', 'Tocantins', '(33) 3333-33333');
+(5, 'baixinhosapenas@globoourecord.com', 'Meneghel, Xuxa', 'Macaúbas', 'Bahia', '(10) 2943-8650'),
+(21, 'rb.atn@gmail.com', 'Roberval Antunes', 'Vitória', 'Espírito Santo', '(12) 78988-7653');
 
 -- --------------------------------------------------------
 
@@ -94,13 +92,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
