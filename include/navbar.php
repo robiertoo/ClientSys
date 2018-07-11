@@ -25,7 +25,7 @@ if (!$logged) {
     </ul>
     <ul class="navbar-nav navbar-right">
       <li class="nav-item">
-        <a class="nav-link" id="login-button" data-toggle="modal" data-target="#login-box">Login</a>
+        <a class="nav-link" href="#" id="login-button" data-toggle="modal" data-target="#login-box">Login</a>
       </li>
     </ul>
     <?php

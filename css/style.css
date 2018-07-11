@@ -7,21 +7,17 @@ body {
     margin-bottom: 60px;
 }
 
-.content{
+.content {
     min-height: 100vh;
 }
 
-.footer{
+.footer {
     position: absolute;
     right: 0;
     bottom: 0;
     left: 0;
     text-align: center;
     font-size: 14px;
-}
-
-#login-button {
-    cursor: pointer;
 }
 
 .nav-item a {

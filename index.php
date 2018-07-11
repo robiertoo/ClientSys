@@ -30,7 +30,7 @@ if (!$logged) {
         Sistema destinado ao cadastro de clientes.
       </p>
       <p>
-        Realize login para ter acesso!
+        Realize <a href="#" data-toggle="modal" data-target="#login-box">login</a> para ter acesso!
       </p>
       <a href="registerUser.php">
         <button class="btn btn-success float-right">Cadastre-se!</button>
