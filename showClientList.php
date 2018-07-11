@@ -34,7 +34,7 @@ if (!$logged) {
               S305.745,447,242.25,447z"/>
             </svg>
           </label>
-          <input type="text" class="form-control" name="nameSearch" id="nameSearch" aria-describedby="nameSearchHelp" placeholder="Insira aqui">
+          <input type="text" class="form-control" name="nameSearch" id="nameSearch" aria-describedby="nameSearchHelp" placeholder="Escreva aqui">
         </div>
       <table class="table">
         <thead>
@@ -109,7 +109,7 @@ if ($_GET) {
     }, 1500);
     $("#nameSearch").on("keyup", function() {
       var value = $(this).val().toLowerCase();
-      $(".table tr").filter(function() {
+      $(".table tbody tr").filter(function() {
         $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
   });
